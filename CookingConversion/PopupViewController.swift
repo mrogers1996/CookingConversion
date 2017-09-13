@@ -8,20 +8,29 @@
 
 import UIKit
 
-class PopupViewController: UIViewController {
+class PopupViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
+        
+    
         // Do any additional setup after loading the view.
     }
-
+    
+  
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBOutlet weak var pickerUnit: UIPickerView!
+    
     @IBAction func showPopup(_ sender: AnyObject) {
             
             let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: )("sbPopupID") as! PopupViewController
@@ -47,7 +56,20 @@ class PopupViewController: UIViewController {
         
     }
     
+    var pickerData = ["UnitA", "UnitB", "UnitC"]
     
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        return pickerData[row]
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    
+
     
     
     /*

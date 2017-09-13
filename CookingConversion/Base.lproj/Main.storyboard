@@ -17,9 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Xu-Nf-YUk">
-                                <rect key="frame" x="0.0" y="474" width="375" height="216"/>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7kU-3K-qNA">
                                 <rect key="frame" x="0.0" y="434" width="375" height="30"/>
                                 <color key="backgroundColor" red="0.30303283180000001" green="0.44382289000000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -30,6 +27,13 @@
                                     <action selector="closePopup:" destination="cTg-YA-nte" eventType="touchUpInside" id="qIS-gz-m6e"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Xu-Nf-YUk">
+                                <rect key="frame" x="0.0" y="459" width="375" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="cTg-YA-nte" id="AbB-Yg-mzS"/>
+                                    <outlet property="delegate" destination="cTg-YA-nte" id="x8k-91-gSy"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -42,6 +46,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gys-cA-Lct"/>
                     </view>
+                    <connections>
+                        <outlet property="pickerUnit" destination="7Xu-Nf-YUk" id="1Pd-of-Sy0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mrN-PG-HD4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
