@@ -27,8 +27,8 @@
                                     <action selector="closePopup:" destination="cTg-YA-nte" eventType="touchUpInside" id="qIS-gz-m6e"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Xu-Nf-YUk">
-                                <rect key="frame" x="0.0" y="459" width="375" height="216"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Xu-Nf-YUk">
+                                <rect key="frame" x="0.0" y="474" width="375" height="216"/>
                                 <connections>
                                     <outlet property="dataSource" destination="cTg-YA-nte" id="AbB-Yg-mzS"/>
                                     <outlet property="delegate" destination="cTg-YA-nte" id="x8k-91-gSy"/>
@@ -52,7 +52,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mrN-PG-HD4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-28" y="-254.12293853073464"/>
+            <point key="canvasLocation" x="-254" y="-224"/>
         </scene>
         <!--Popup View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -62,6 +62,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2TL-BH-qVn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cooking Conversions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUv-hd-qGL">
+                                        <rect key="frame" x="8" y="28" width="359" height="79"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="359" id="HJB-mQ-cOy"/>
+                                            <constraint firstAttribute="height" constant="79" id="VlQ-Xs-Wco"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JvR-uH-DKa">
+                                        <rect key="frame" x="127" y="115" width="117" height="29"/>
+                                        <segments>
+                                            <segment title="volume"/>
+                                            <segment title="temp"/>
+                                        </segments>
+                                    </segmentedControl>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdG-wU-fbk">
+                                        <rect key="frame" x="0.0" y="151" width="375" height="216"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </pickerView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.86232998704663211" green="0.86232998704663211" blue="0.86232998704663211" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="JvR-uH-DKa" firstAttribute="top" secondItem="RUv-hd-qGL" secondAttribute="bottom" constant="8" id="1rJ-Cy-yJz"/>
+                                    <constraint firstItem="RUv-hd-qGL" firstAttribute="top" secondItem="2TL-BH-qVn" secondAttribute="top" constant="28" id="2v9-P6-TFg"/>
+                                    <constraint firstItem="fdG-wU-fbk" firstAttribute="leading" secondItem="2TL-BH-qVn" secondAttribute="leading" id="E5g-pJ-rlg"/>
+                                    <constraint firstAttribute="trailing" secondItem="fdG-wU-fbk" secondAttribute="trailing" id="QSG-aU-7Fu"/>
+                                    <constraint firstItem="RUv-hd-qGL" firstAttribute="centerX" secondItem="2TL-BH-qVn" secondAttribute="centerX" id="XKr-Uj-fcr"/>
+                                    <constraint firstAttribute="trailing" secondItem="RUv-hd-qGL" secondAttribute="trailing" constant="8" id="YQR-YP-wbA"/>
+                                    <constraint firstItem="JvR-uH-DKa" firstAttribute="leading" secondItem="2TL-BH-qVn" secondAttribute="leading" constant="127" id="hZ8-Uc-nR5"/>
+                                    <constraint firstAttribute="trailing" secondItem="JvR-uH-DKa" secondAttribute="trailing" constant="131" id="sop-3Q-XJ9"/>
+                                    <constraint firstItem="RUv-hd-qGL" firstAttribute="leading" secondItem="2TL-BH-qVn" secondAttribute="leading" constant="8" id="vZa-Ul-m25"/>
+                                    <constraint firstItem="fdG-wU-fbk" firstAttribute="top" secondItem="JvR-uH-DKa" secondAttribute="bottom" constant="8" id="yLt-yT-lIE"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NdA-gF-QWH">
                                 <rect key="frame" x="139" y="375" width="97" height="34"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -91,20 +131,16 @@
                                     <action selector="convertThings:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lxi-Rj-qKE"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cooking Conversions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUv-hd-qGL">
-                                <rect key="frame" x="48" y="42" width="295" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="bx8-6t-9eK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="427" id="6eP-KP-U02"/>
+                            <constraint firstItem="2TL-BH-qVn" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="9xI-kM-xzO"/>
                             <constraint firstItem="NdA-gF-QWH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="355" id="Hvh-1g-Znd"/>
+                            <constraint firstItem="2TL-BH-qVn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NxP-G5-ocW"/>
+                            <constraint firstItem="2TL-BH-qVn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="U4N-qd-xAA"/>
                             <constraint firstItem="NdA-gF-QWH" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="egN-0L-NqS"/>
+                            <constraint firstItem="2TL-BH-qVn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gNZ-5P-VYl"/>
                             <constraint firstItem="bx8-6t-9eK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="if8-I0-5rj"/>
                             <constraint firstItem="bx8-6t-9eK" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="tvR-3I-X0x"/>
                             <constraint firstItem="NdA-gF-QWH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="139" id="v2o-zm-euu"/>
@@ -113,11 +149,12 @@
                     </view>
                     <connections>
                         <outlet property="conversionLabel" destination="RUv-hd-qGL" id="NGN-g5-hBd"/>
+                        <outlet property="picker" destination="fdG-wU-fbk" id="Skp-tr-Li2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="32.833583208395808"/>
+            <point key="canvasLocation" x="436" y="-224.4377811094453"/>
         </scene>
     </scenes>
 </document>

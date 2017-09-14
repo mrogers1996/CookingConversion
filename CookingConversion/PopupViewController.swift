@@ -10,11 +10,17 @@ import UIKit
 
 class PopupViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-
+    @IBOutlet weak var picker: UIPickerView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //        leftPicker = ["0","1","2","3","4","5","6","7","8","9","10"]
+        //
+        //        middlePicker = ["0","1/4","1/3","1/2","2/3","3/4","5/8"]
+        //
+        //        rightPicker = ["Tsp", "Tbsp", "Cup", "Pint", "Quart",
 
         
     
@@ -57,15 +63,38 @@ class PopupViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     }
     
     var pickerData = ["UnitA", "UnitB", "UnitC"]
+    //    var leftPicker :[String]!
+    //    var middlePicker :[String]!
+    //    var rightPicker :[String]!
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
         return pickerData[row]
     }
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerConvertView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return pickerData.count
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+        //        if (component == 0){
+        //            return middlePicker.count
+        //        }else {
+        //            return leftPicker.count
+        //        }else {
+        //            return rightPicker.count
+        //        }
+        return 0
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        //        if (component == 0){
+        //            return middlePicker[row]
+        //        }else{
+        //            return leftPicker[row]
+        //        }else {
+        //            return rightPicker[row]
+        //        }
+        return "none"
     }
     
     
